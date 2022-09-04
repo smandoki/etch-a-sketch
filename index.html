@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Etch-a-sketch</h1>
+
+    <div class="container">
+        <div id="controls">
+            <div id="color-select">
+                <input type="color" id="color-picker">
+                <p>Selected Colour</p>
+            </div>
+
+            <button>Draw</button>
+            <button>Eraser</button>
+            <button>Rainbow</button>
+            <button>Shading</button>
+            <input type="range" id="grid-size" min="16" max="100" value="16">
+            <label for="grid-size">Grid Size: 16x16</label>
+            <button>Clear All</button>
+        </div>
+
+        <div id="grid"></div>
+    </div>
+</body>
+</html>
