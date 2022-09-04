@@ -1,4 +1,4 @@
 # etch-a-sketch
 
 Simple etch-a-sketch app implemented in html, css, and vanilla JS.
-Site link Site link https://smandoki.github.io/etch-a-sketch/
+Site link https://smandoki.github.io/etch-a-sketch/
