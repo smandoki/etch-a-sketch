@@ -43,6 +43,8 @@ h1 {
     width: 600px;
     height: 600px;
     box-shadow: 0 0 10px 2px #888888;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 button {
