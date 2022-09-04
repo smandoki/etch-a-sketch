@@ -4,11 +4,9 @@ const grid = document.querySelector('#grid');
 const colorPicker = document.querySelector('#color-picker');
 const slider = document.querySelector('#grid-size');
 const sliderLabel = document.querySelector('label');
+const clearButton = document.querySelector('#clear');
 let mode = 'draw';
 let gridSize = Number(slider.value);
-let hue = 0;
-let saturation = 100;
-let brightness = 100;
 createGrid(grid, gridSize, gridSideLength);
 
 
@@ -69,10 +67,10 @@ function createGrid(grid, gridSize, gridSideLength) {
 //drawing function
 function onMouseover(e) {
     const div = e.target;
-
+    
     switch (mode) {
         case 'draw':
-            div.style.backgroundColor = 'black';
+            div.style.backgroundColor = colorPicker.value;
             break;
 
         case 'erase':
@@ -80,9 +78,16 @@ function onMouseover(e) {
             break;
 
         case 'rainbow':
+            div.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
             break;
+    }
+}
 
-        case 'shading':
-            break;
+//clear functionality
+clearButton.onclick = () => {
+    const children = grid.children;
+
+    for (let child of children) {
+        child.style.backgroundColor = 'white';
     }
 }
