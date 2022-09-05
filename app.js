@@ -84,9 +84,5 @@ function onMouseover(e) {
 
 //clear functionality
 clearButton.onclick = () => {
-    const children = grid.children;
-
-    for (let child of children) {
-        child.style.backgroundColor = 'white';
-    }
+    createGrid(grid, gridSize);
 }
