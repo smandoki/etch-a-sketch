@@ -44,7 +44,16 @@ h1 {
     height: 600px;
     box-shadow: 0 0 10px 2px #888888;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+}
+
+.row div {
+    flex: 1;
 }
 
 button {

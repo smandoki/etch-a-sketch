@@ -1,5 +1,4 @@
 //initialization variables and function calls
-const gridSideLength = 600;
 const grid = document.querySelector('#grid');
 const colorPicker = document.querySelector('#color-picker');
 const slider = document.querySelector('#grid-size');
@@ -7,7 +6,7 @@ const sliderLabel = document.querySelector('label');
 const clearButton = document.querySelector('#clear');
 let mode = 'draw';
 let gridSize = Number(slider.value);
-createGrid(grid, gridSize, gridSideLength);
+createGrid(grid, gridSize);
 
 
 /*
@@ -39,28 +38,28 @@ slider.oninput = () => {
 }
 
 slider.addEventListener('mouseup', () => {
-    createGrid(grid, gridSize, gridSideLength);
+    createGrid(grid, gridSize);
 });
 
 
 //populate grid with divs
-function createGrid(grid, gridSize, gridSideLength) {
+function createGrid(grid, gridSize) {
     //remove original grid
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
 
     //create new grid
-    const divSideLength = gridSideLength / gridSize;
+    for (let i = 0; i < gridSize; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        grid.appendChild(row);
 
-    for (let i = 0; i < gridSize * gridSize; i++) {
-        const div = document.createElement('div');
-        div.style.height = `${divSideLength}px`;
-        div.style.width = `${divSideLength}px`;
-
-        div.addEventListener('mouseover', onMouseover);
-
-        grid.appendChild(div);
+        for (let j = 0; j < gridSize; j++) {
+            const div = document.createElement('div');
+            div.addEventListener('mouseover', onMouseover);
+            row.appendChild(div);
+        }
     }
 }
 
