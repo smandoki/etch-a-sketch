@@ -50,16 +50,12 @@ function createGrid(grid, gridSize) {
     }
 
     //create new grid
-    for (let i = 0; i < gridSize; i++) {
-        const row = document.createElement('div');
-        row.classList.add('row');
-        grid.appendChild(row);
-
-        for (let j = 0; j < gridSize; j++) {
-            const div = document.createElement('div');
-            div.addEventListener('mouseover', onMouseover);
-            row.appendChild(div);
-        }
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    
+    for (let i = 0; i < gridSize ** 2; i++) {
+        const div = document.createElement('div');
+        div.addEventListener('mouseover', onMouseover);
+        grid.appendChild(div);
     }
 }
 
